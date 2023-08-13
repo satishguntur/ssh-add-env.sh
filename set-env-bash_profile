@@ -1,0 +1,13 @@
+v_test=`ps -ef | grep a573212 | grep ssh-agent | grep -v grep |  wc -l`
+if [ $v_test -eq 0 ]
+then
+echo "No agent found. Starting agent and loading keys..."
+ssh-agent > ~/setenv_agent.ksh
+. ~/setenv_agent.ksh
+ssh-add ~/.ssh/id_dsa
+ssh-add ~/.ssh/ssh_a573212_rsa_4096_openssh.pub
+else
+echo "Found agent, listing keys:"
+. ~/setenv_agent.ksh
+ssh-add -l
+fi

@@ -1,0 +1,3 @@
+SSH_AUTH_SOCK=/tmp/ssh-uQkUF78TVwvs/agent.4521 #Temporary file created in /tmp; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=4522; export SSH_AGENT_PID;
+echo Agent pid 4522;
